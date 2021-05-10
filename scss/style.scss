@@ -1,0 +1,124 @@
+//font
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import 'mixins';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    background-image: linear-gradient(to bottom, hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+}
+
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: fit-content;
+    // border: 2px solid orange;
+    padding: 1.5em;
+    margin: 1.5em;
+    background-color: white;
+    border-radius: 20px;
+
+    &__img{
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        &-1{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 55%;
+            transform: translateX(-55%);
+            margin-top: -10em;
+        }
+
+        &-2{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 50%;
+            transform: translateX(-50%);
+            margin-top: -1.5em;
+        }
+        &-3{
+            display: none;
+        }
+    }
+
+    &__heading{
+        text-align: center;
+        margin: 1em 0 1em 0;
+        @include font-700;
+    }
+    &__faqs{
+        padding: 0 1em;
+        margin-top: 8em;
+        margin-bottom: 2em;
+        display: flex;
+        flex-direction: column;
+        justify-content: left;
+
+        .card__ans{
+            display: none;
+            @include font-400;
+            text-align: left;
+            line-height: 1.5;
+            margin: 1em;
+            color: hsl(240, 6%, 50%);;
+        }
+
+        &__1:hover > .card__ans, &__2:hover > .card__ans,
+        &__3:hover > .card__ans, &__4:hover > .card__ans,
+        &__5:hover > .card__ans{
+            display: block;
+        }
+
+        &__1:hover > .card__ques, &__2:hover > .card__ques,
+        &__3:hover > .card__ques, &__4:hover > .card__ques,
+        &__5:hover > .card__ques{
+            font-weight: 700;
+
+            .card__down__icon{
+                transform: rotateX(180deg);
+            }
+
+        }
+    }
+
+    &__ques{
+        @include font-400;
+        margin: 1em 1em;
+        display: flex;
+        color: hsl(237, 12%, 33%);
+        justify-content:space-between;
+
+    }
+    &__down__icon{
+        margin-left: 2em;   
+    }
+
+    hr{
+        background-color: hsl(240, 5%, 91%);
+        opacity: 0.6;
+        margin-top: 10px;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+
+
+}
+
+// desktop design
+@import 'desktop';
