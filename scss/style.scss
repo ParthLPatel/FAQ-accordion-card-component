@@ -24,7 +24,6 @@ body{
     justify-content: center;
     align-items: center;
     height: fit-content;
-    // border: 2px solid orange;
     padding: 1.5em;
     margin: 1.5em;
     background-color: white;
@@ -70,30 +69,12 @@ body{
         flex-direction: column;
         justify-content: left;
 
-        .card__ans{
-            display: none;
-            @include font-400;
-            text-align: left;
-            line-height: 1.5;
-            margin: 1em;
-            color: hsl(240, 6%, 50%);;
+        details[open] > summary > .card__down__icon{
+            transform: rotateX(180deg);
         }
 
-        &__1:hover > .card__ans, &__2:hover > .card__ans,
-        &__3:hover > .card__ans, &__4:hover > .card__ans,
-        &__5:hover > .card__ans{
-            display: block;
-        }
-
-        &__1:hover > .card__ques, &__2:hover > .card__ques,
-        &__3:hover > .card__ques, &__4:hover > .card__ques,
-        &__5:hover > .card__ques{
+        details[open] > summary > p{
             font-weight: 700;
-
-            .card__down__icon{
-                transform: rotateX(180deg);
-            }
-
         }
     }
 
@@ -109,12 +90,18 @@ body{
         margin-left: 2em;   
     }
 
+    &__ans{
+            @include font-400;
+            text-align: left;
+            line-height: 1.5;
+            margin: 1em;
+            color: hsl(240, 6%, 50%);;
+    }
+
     hr{
         background-color: hsl(240, 5%, 91%);
         opacity: 0.6;
-        margin-top: 10px;
-        margin-left: 1em;
-        margin-right: 1em;
+        margin: 0 1em;
     }
 
 
