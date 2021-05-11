@@ -53,6 +53,9 @@
 
         }
 
+        &__ques:hover > p{
+            color: red;
+        }
         &__ans{
             max-width: fit-content;
         }
