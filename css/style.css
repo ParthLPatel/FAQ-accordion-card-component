@@ -70,32 +70,12 @@ body {
   justify-content: left;
 }
 
-.card__faqs .card__ans {
-  display: none;
-  font-family: 'Kumbh Sans', sans-serif;
-  font-weight: 400;
-  text-align: left;
-  line-height: 1.5;
-  margin: 1em;
-  color: #787887;
-}
-
-.card__faqs__1:hover > .card__ans, .card__faqs__2:hover > .card__ans,
-.card__faqs__3:hover > .card__ans, .card__faqs__4:hover > .card__ans,
-.card__faqs__5:hover > .card__ans {
-  display: block;
-}
-
-.card__faqs__1:hover > .card__ques, .card__faqs__2:hover > .card__ques,
-.card__faqs__3:hover > .card__ques, .card__faqs__4:hover > .card__ques,
-.card__faqs__5:hover > .card__ques {
-  font-weight: 700;
-}
-
-.card__faqs__1:hover > .card__ques .card__down__icon, .card__faqs__2:hover > .card__ques .card__down__icon,
-.card__faqs__3:hover > .card__ques .card__down__icon, .card__faqs__4:hover > .card__ques .card__down__icon,
-.card__faqs__5:hover > .card__ques .card__down__icon {
+.card__faqs details[open] > summary > .card__down__icon {
   transform: rotateX(180deg);
+}
+
+.card__faqs details[open] > summary > p {
+  font-weight: 700;
 }
 
 .card__ques {
@@ -111,12 +91,19 @@ body {
   margin-left: 2em;
 }
 
+.card__ans {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 400;
+  text-align: left;
+  line-height: 1.5;
+  margin: 1em;
+  color: #787887;
+}
+
 .card hr {
   background-color: #e7e7e9;
   opacity: 0.6;
-  margin-top: 10px;
-  margin-left: 1em;
-  margin-right: 1em;
+  margin: 0 1em;
 }
 
 @media screen and (min-width: 1100px) {
@@ -152,6 +139,9 @@ body {
     margin-top: 1em;
     font-size: 1rem;
     margin-left: 3em;
+  }
+  .card__ques:hover > p {
+    color: red;
   }
   .card__ans {
     max-width: fit-content;
